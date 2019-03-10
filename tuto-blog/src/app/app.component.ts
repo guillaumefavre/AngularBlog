@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Post } from './post';
 
 @Component({
   selector: 'app-root',
@@ -7,41 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  date = new Date();
-
   posts = [
-  	{
-  		titre: 'Premier post',
-  		contenu: 'voici mon premier post',
-  		loveIts: 3,
-  		creationDate: this.getDate()
-  	},
-	{
-  		titre: 'Second post',
-  		contenu: 'voici mon second post',
-  		loveIts: -2,
-  		creationDate: this.getDate()
-  	},
-  	{
-  		titre: 'Troisième post',
-  		contenu: 'voici mon troisième post',
-  		loveIts: 4,
-  		creationDate: this.getDate()
-  	},
-	{
-  		titre: 'Quatrième post',
-  		contenu: 'voici mon quatrième post',
-  		loveIts: 1,
-  		creationDate: this.getDate()
-  	}
+  	new Post('Premier post', 'Voici mon tout premier post', 2),
+  	new Post('Deuxième post', 'Voici mon todeuxième post', 1),
+  	new Post('Troisième post', 'Et un troisième post', -2), 
+  	new Post('Quatrième post', 'Puis un quatrième post', 3)
   ];
 
-  constructor() {
-
-  }
-
-  getDate() {
-  	return this.date;
-  }
+  constructor() {}
 
 }
+

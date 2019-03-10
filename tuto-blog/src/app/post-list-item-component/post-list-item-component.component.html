@@ -2,9 +2,9 @@
 				'list-group-item-success': postLoveIts > 0,
 				 'list-group-item-danger': postLoveIts < 0}">
 
-	<h2>{{ postTitre }}</h2>
+	<h2>{{ postTitre }} ({{ postLoveIts }} likes)</h2>
 	<p>{{ postContenu }}</p>
-	<p>{{ postLoveIts }}</p>
+	<p>Date : {{ postCreationDate | date: 'short' }}</p>
 
 
   	<button class="btn btn-success" (click)="onLoveIt()">Love it !</button>

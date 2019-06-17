@@ -26,11 +26,8 @@ export class PostListComponentComponent implements OnInit {
       }
     );
 
-    console.log('1');
     this.postService.getPosts();
-    console.log('2');
     this.postService.emitPosts();
-    console.log('3');
   }
 
   ngOnChange(): void {

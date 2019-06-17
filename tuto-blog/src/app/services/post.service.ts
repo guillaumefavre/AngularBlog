@@ -51,6 +51,7 @@ export class PostService {
 
   deletePost(post: Post) {
 
+    // Parcours les différents posts jusqu'à trouver celui correspondant au paramètre
     const postIndexToDelete = this.posts.findIndex(
       (postElem) => {
         if (postElem === post) {
@@ -63,6 +64,16 @@ export class PostService {
     this.emitPosts();
   }
 
+
+  lovePost(post: Post) {
+    post.loveIts++;
+    this.emitPosts();
+  }
+
+  dontLovePost(post: Post) {
+    post.loveIts--;
+    this.emitPosts();
+  }
 
 
   private handleError(err: HttpErrorResponse) {

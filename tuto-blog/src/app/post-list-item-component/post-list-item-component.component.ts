@@ -23,13 +23,11 @@ export class PostListItemComponentComponent implements OnInit {
   }
 
   onLoveIt() {
-  	console.log('I love it !');
-  	this.postLoveIts = this.postLoveIts + 1;
+    this.postService.lovePost(this.post);
   }
 
   onDontLoveIt() {
-  	console.log('I don\'t love it !');
-  	this.postLoveIts = this.postLoveIts - 1;
+    this.postService.dontLovePost(this.post);
   }
 
   onDelete() {

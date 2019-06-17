@@ -24,27 +24,42 @@ export class PostService {
   }
 
   getPosts(): Observable<Post[]> {
-    console.log('getPosts début : '+this.posts);
+    console.log('getPosts début : ' + this.posts);
     return this.http.get<Post[]>(this.postsUrl).pipe(
       tap(data => {
         console.log('All : ' + JSON.stringify(data)),
-        console.log('posts get 1 : '+this.posts);
-        if(this.posts.length <= data.length) {
+          console.log('posts get 1 : ' + this.posts);
+        if (this.posts.length <= data.length) {
           this.posts = data;
         }
-        console.log('posts get 2 : '+this.posts);
+        console.log('posts get 2 : ' + this.posts);
         this.emitPosts();
       }),
       catchError(this.handleError)
     );
 
-    
+
   }
 
   createPost(post: Post) {
-    console.log('posts existants new : '+this.posts);
+    console.log('posts existants new : ' + this.posts);
     console.log('post créé : ' + this.posts);
     this.posts.push(post);
+    this.emitPosts();
+  }
+
+
+  deletePost(post: Post) {
+
+    const postIndexToDelete = this.posts.findIndex(
+      (postElem) => {
+        if (postElem === post) {
+          return true;
+        }
+      }
+    );
+
+    this.posts.splice(postIndexToDelete, 1);
     this.emitPosts();
   }
 

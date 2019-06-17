@@ -1,0 +1,14 @@
+[
+  {
+    "titre": "Post 1",
+    "contenu": "Post 1",
+    "loveIts": 2,
+    "creationDate": "May 21, 2019"
+  },
+  {
+    "titre": "Deuxième post",
+    "contenu": "blablabla du deuxième post...",
+    "loveIts": -1,
+    "creationDate": "June 3, 2019"
+  }
+]

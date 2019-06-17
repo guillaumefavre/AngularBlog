@@ -1,3 +1,22 @@
-<p>
-  new-post works!
-</p>
+<div class="container">
+  <div>
+    <div class="col-xs-12">
+      <h1>New Post</h1>
+
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="titre">Titre</label>
+          <input type="text" id="titre" class="form-control" name="titre" ngModel required>
+        </div>
+        <div class="form-group">
+          <label for="contenu">Contenu</label>
+          <input type="text" id="contenu" class="form-control" name="contenu" ngModel required>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Enregistrer</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>

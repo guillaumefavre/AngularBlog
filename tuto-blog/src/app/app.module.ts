@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PostListComponentComponent } from './post-list-component/post-list-component.component';
 import { PostListItemComponentComponent } from './post-list-item-component/post-list-item-component.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NewPostComponent } from './new-post/new-post.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

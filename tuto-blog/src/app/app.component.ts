@@ -16,19 +16,12 @@ export class AppComponent {
   // 	new Post('Quatrième post', 'Puis un quatrième post', 3)
   // ];
 
-  posts: Post[] = [];
-  errorMessage: string;
+
 
   constructor(private postService: PostService) {}
 
   ngOnInit(): void {
-    console.log('AppComponent OnInit()');
 
-    this.postService.getPosts().subscribe(
-      postsReturn => this.posts = postsReturn,
-      error => this.errorMessage = <any>error
-    );
-    
   }
 
 }

@@ -1,9 +1,17 @@
-<ul class="list-group">
+<div class="container">
+	<div>
+		<div class="col-xs-12">
+			<h1>Posts</h1>
 
-  <app-post-list-item-component *ngFor="let post of childPosts"
-  									[postTitre] = post.titre
-  									[postContenu] = post.contenu
-  									[postLoveIts] = post.loveIts
-  									[postCreationDate] = post.creationDate>
-  </app-post-list-item-component>
-</ul>
+			<ul class="list-group">
+
+				<app-post-list-item-component *ngFor="let post of posts" 
+					[postTitre]=post.titre
+					[postContenu]=post.contenu 
+					[postLoveIts]=post.loveIts 
+					[postCreationDate]=post.creationDate>
+				</app-post-list-item-component>
+			</ul>
+		</div>
+	</div>
+</div>
